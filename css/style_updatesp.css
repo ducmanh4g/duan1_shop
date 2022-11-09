@@ -1,0 +1,19 @@
+.container{
+    width: 900px;
+    margin: auto;
+    padding-top: 20px;
+    
+}
+a button{
+    width: 100%;
+    background-color: rgb(60, 0, 255);
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 30px;
+}
+a button:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: solid 1px blue;
+}
