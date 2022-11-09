@@ -144,8 +144,8 @@ function dk() {
 
                     </form>
                     <div class="">
-                        <ahref=""><button style="color:red;">quên mật khẩu</button></a>
-                            <button style="color:red;" onclick="dk()">đăng ký thành viên</button>
+                        <a href=""><button style="color:red;">quên mật khẩu</button></a>
+                        <button style="color:red;" onclick="dk()">đăng ký thành viên</button>
                     </div>
                 </div>
                 <?php } ?>
