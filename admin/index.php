@@ -12,31 +12,8 @@
     <?php  
 session_start();
 if(!isset($_SESSION['username'])){ ?>
-    <div class="taikhoan">
-        <h3>Tài khoản</h3>
-        <form action="../view/save/save_tk.php" method="GET" onsubmit="return(checklogin())">
-            <p>Tên đăng nhập</p>
-            <div>
-                <input id="user" class="input" type="text" required="" name="taikhoan" value="">
-            </div>
-            <p>Mật khẩu</p>
-            <div>
-                <input id="pass" class="input" type="password" required minlength="3" name="matkhau">
-            </div>
-            <p>Ghi nhớ mật khẩu</p>
-            <div>
-                <input class="checkbox" type="checkbox">
-            </div>
-            <div>
-                <input class="button" type="submit" value="Đăng nhập">
-            </div>
-
-        </form>
-        <div class="">
-            <a href=""><button style="color:red;">quên mật khẩu</button></a>
-
-        </div>
-    </div>
+   <h2>Xin Mời Đăng Nhập</h2>
+   <a href="../index.php"><button>Đăng Nhập</button></a>
     <?php }
     else{
         include "header.php";
