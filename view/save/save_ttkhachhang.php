@@ -11,6 +11,6 @@
     $sql = "insert into datlichxem(ngaydatlich,idtk,idxe) values ('$date',$idtk[0],$idxe)";
     connect($sql);
 
-    echo  $date;
-    // header("Location:".$_SERVER['HTTP_REFERER']);
+    
+    header("Location:".$_SERVER['HTTP_REFERER']);
 ?>

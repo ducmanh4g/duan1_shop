@@ -166,7 +166,7 @@
                     <?php foreach($cl as $key => $value):?>
                     <ul>
                         <li>
-                            <a href="./save/save_spcungloai.php?id=<?php echo $value['id']?>">
+                            <a href="./save/save_spcungloai.php?id=<?php echo $value['idxe']?>">
                                 <img class="imgchitiet" src="../admin/uploat/<?php echo $value['img']?>" alt="">
                                 <?php echo $value['name']?>
                             </a>
