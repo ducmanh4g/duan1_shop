@@ -5,43 +5,9 @@
   }
 *{box-sizing: border-box;}
 body {
+  width: 100%;
   background-color: #0000005a;
 }
-/* backgroud */
-html {
-
-  background-image:   
-  url('../../view/img/backgroud/may-bay-vietnam.png'), 
-  url('../../view/img/backgroud/VN_ATR72.png'),
-  url('../../view/img/backgroud/may.png'),
-  url('../../view/img/backgroud/máy-bay-min.png'); 
-  background-repeat: repeat-x;
-
-  background-position: 
-    0 10%,
-    0 40%,
-    0 50%,
-    0 70%;
-    
-  background-size: 
-    1000px,
-    700px,
-    500px ,
-    700px;
-    
-  animation: 50s para infinite linear;
-  }
-
-@keyframes para {
-  100% {
-    background-position: 
-      -2000px 20%,
-      -1000px 70%,
-      200px 20%,
-      6000px 100%;
-     
-    }
-  }
 .header {
     display: flex;
     justify-content: space-between;

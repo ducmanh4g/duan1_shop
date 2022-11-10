@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="banner">
-            <h2>Siêu thị trực tuyến</h2>
+            
             <div id="slideshow">
                 <div class="slide-wrapper">
                     <div class="slide"><img src="./img/banner.jpg"></div>
