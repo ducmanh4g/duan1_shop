@@ -13,12 +13,12 @@
     <div class="container">
         <div class="sidebar">
             <ul>
-            <li>
+                <li>
                 <li><a href="index.php">Trang chủ</a></li>
                 <li><a href="index.php?id=adddm">Danh Mục</a></li>
                 <li><a href="index.php?id=addxe">Xe</a></li>
                 <li><a href="index.php?id=addkh">Khách Hàng</a></li>
-                <li><a href="index.php?id=addtdl">Đặt Lịch</a></li>
+                <li><a href="index.php?id=adddl">Đặt Lịch</a></li>
                 <li><a href="index.php?id=addcm">Comment</a></li>
                 <li><a href="index.php?id=addtt">Tin tức</a></li>
             </ul>
@@ -28,12 +28,12 @@
 
                 <?php
                      include "./model/connect.php";
-                     $sql = "select * from thongtinkhachhang";
+                     $sql = "select * from datlichxem";
                      $thongtin= getAll($sql);
 
+                     
                 
                 ?>
-                <p>Số đơn hàng: <?php echo count($thongtin);?></p>
                 <table>
                     <thead>
                         <th>
@@ -43,18 +43,17 @@
                             Họ tên
                         </th>
                         <th>
-                            Địa chỉ
-                        </th>
-                        <th>
                             SDT
                         </th>
                         <th>
-                            Mã đơn hàng
+                            Gmail
                         </th>
                         <th>
-                           Mã Sản Phẩm
+                            Ngày Xem Xe
                         </th>
-                       
+                        <th>
+                        Loại Xe
+                        </th>
                         <th></th>
                     </thead>
                     <tbody>
@@ -64,24 +63,35 @@
                                 <p><?php echo $key+1?></p>
                             </td>
                             <td>
-                                <p><?php echo $value['hoten']?></p>
+                                <p><?php 
+                                    $idtk = $value['idtk'];
+                                    $sqlhoten = "select hoten,sdt,gmail from taikhoan where idtk = $idtk";
+                                    $taikhoan = getOne($sqlhoten);
+                                    echo $taikhoan[0]
+                                ?></p>
                             </td>
                             <td>
-                                <p><?php echo $value['diachi']?></p>
+                                <?php  echo $taikhoan[1]?>
                             </td>
                             <td>
-                                <p><?php echo $value['sdt']?></p>
+                                <?php  echo $taikhoan[2]?>
+
                             </td>
                             <td>
-                                <p><?php echo $value['id']?></p>
+                                <p><?php echo $value['ngaydatlich']?></p>
                             </td>
                             <td>
-                                <p><?php echo $value['idsp']?></p>
+                                <?php 
+                                    $idxe = $value['idxe'];
+                                    $sqlxe = "select tenxe from xe where idxe = $idxe";
+                                    $xe = getOne($sqlxe);
+                                    echo $xe[0]
+                                ?>
                             </td>
-                           
+
                             <td>
                                 <a onclick="return(a())"
-                                    href="./donhang/delete.php?id=<?php echo $value['id']?>"><button>Delete</button></a>
+                                    href="./datlich/delete.php?id=<?php echo $value['iddl']?>"><button>Delete</button></a>
                             </td>
                         </tr>
                         <?php endforeach?>

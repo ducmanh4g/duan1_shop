@@ -22,7 +22,7 @@
                 <li><a href="index.php?id=adddm">Danh Mục</a></li>
                 <li><a href="index.php?id=addxe">Xe</a></li>
                 <li><a href="index.php?id=addkh">Khách Hàng</a></li>
-                <li><a href="index.php?id=addtdl">Đặt Lịch</a></li>
+                <li><a href="index.php?id=adddl">Đặt Lịch</a></li>
                 <li><a href="index.php?id=addcm">Comment</a></li>
                 <li><a href="index.php?id=addtt">Tin tức</a></li>
 
