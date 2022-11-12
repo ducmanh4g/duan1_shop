@@ -13,9 +13,9 @@
             
             <div id="slideshow">
                 <div class="slide-wrapper">
-                    <div class="slide"><img src="./img/banner.jpg"></div>
-                    <div class="slide"><img src="./img/sale-online-la-gi-1.jpg"></div>
-                    <div class="slide"><img src="./img/online.jpg"></div>
+                <div class="slide"><img src="./img/trato-venta-coche.jpg"></div>
+                    <div class="slide"><img src="./img/1.jpg"></div>
+                    <div class="slide"><img src="./img/banner-03.jpg"></div>
                 </div>
             </div>
             <div class="menu">
