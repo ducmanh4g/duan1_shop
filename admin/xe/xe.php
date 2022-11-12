@@ -56,7 +56,7 @@
                     <td>
                         <div class="button">
                             <a onclick="return(a())"
-                                href="./save/save_deletesp.php?id=<?php echo $value['idxe']?>"><button>Delete</button></a>
+                                href="./xe/delete.php?id=<?php echo $value['idxe']?>"><button>Delete</button></a>
                                    
                             <a id=""
                                 href="./xe/update.php?id=<?php echo $value['idxe']?>"><button>Update</button></a>
@@ -70,7 +70,7 @@
 </body>
 <script>
 function a(){
-      var  a =  confirm("Bạn có muốn xóa danh mục không?")
+      var  a =  confirm("Bạn có muốn xóa Xe không?")
         if(!a==true){
             return false      
         }

@@ -103,7 +103,7 @@
 </body>
 <script>
 function a() {
-    var a = confirm("Bạn có muốn xóa đơn hàng không?")
+    var a = confirm("Bạn có muốn xóa không?")
     if (!a == true) {
         return false
     }
