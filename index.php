@@ -223,12 +223,9 @@ function dangky() {
     var sdt = document.getElementById("sdt").value
 
     <?php 
-        $php_array = $ngdung;
-        $code_array = json_encode($php_array);
+        $code_array = json_encode($ngdung);
     ?>
     var array_code = <?php echo $code_array; ?>;
-
-
     // function kiemTra(item) {
     //     return item['0'] === taikhoan
     // }

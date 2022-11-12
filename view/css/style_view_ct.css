@@ -3,43 +3,10 @@
     margin: auto;
   }
   body {
-    background-color: #00000098;
+    width: 100%;
+    background-color: #000000;
     margin: 0;
   }
-html {
-  background-color: rgb(255, 255, 255);
-  background-image:   
-  url('../../view/img/backgroud/5d38db02b7deffe2bf538c374fdb3f86.png'), 
-  url('../../view/img/backgroud/giay-sneaker_max.png'),
-  url('../../view/img/backgroud/2.png'),
-  url('../../view/img/backgroud/3.png'); 
-  background-repeat: repeat-x;
-  background-position: 
-    0 10%,
-    0 50%,
-    0 10%,
-    0 80%,
-    0 50%;
-  background-size: 
-    2000px,
-    700px,
-    500px 200px,
-    700px,
-    300px 260px;
-  animation: 50s para infinite linear;
-  }
-
-@keyframes para {
-  100% {
-    background-position: 
-      -5000px 20%,
-      -800px 95%,
-      400px 50%,
-      8000px 100%,
-      300px 0;
-    }
-  }
-
 .banner h2{
   color: rgb(239, 0, 0);
   font-weight: bold;
