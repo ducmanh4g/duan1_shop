@@ -295,7 +295,6 @@ function checktk() {
         if (taikhoan == array_code[index]['2']) {
             alert("Tài khoản đã tồn tại");
             document.getElementById("taikhoan").style.color = "red";
-            document.getElementById("taikhoan").focus
             return false;
         } else
             document.getElementById("taikhoan").style.color = "black";
@@ -309,21 +308,20 @@ function checktk() {
     alert("đăng ký thành công")
 }
 
-//đăng nhập số dt
+//check year
 function check() {
-    var year = document.getElementById("date").value
-    var month = document.getElementById("date").value
-    var days = document.getElementById("date").value
-    var date = new Date
-    console.log(date.getDate())
-
-    if (year.slice(0, 4) < date.getFullYear()) {
+    var a = document.getElementById("date").value
+     
+    var date = new Date()
+    var  input_date = new Date(a)
+    console.log()
+    if (input_date.getFullYear() < date.getFullYear()) {
         alert("Năm không hợp lệ")
         return false
-    } else if (month.slice(5, 7) < date.getMonth() + 1) {
+    } else if (input_date.getMonth()+1 < date.getMonth() + 1) {
         alert("tháng không hợp lệ")
         return false
-    } else if (days.slice(8, 10) < date.getDate()) {
+    } else if (input_date.getDate() < date.getDate()) {
         alert("ngày không hợp lệ")
         return false
     }

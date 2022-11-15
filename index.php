@@ -26,7 +26,13 @@ $ngdung = getAll($sqltk);
 $sqldm = "select * from danhmuc";     
 $dm = getAll($sqldm);  
 
- 
+$sqlidxe = "select idxe from datlichxem";
+$idxe = getAll($sqlidxe);
+foreach ($idxe as $key => $value) {  
+    $arr[$key] = $value['idxe'];
+}
+$arridxe = implode(' and idxe <> ', $arr);
+
 ?>
 <script>
 function close() {
@@ -95,21 +101,22 @@ function dk() {
                     <h2>Sản Phẩm</h2>
                     <div class="sanpham">
                         <?php                                                         
-                        $sp="";                       
+                                 
                         if(isset($_SESSION['iddm'])){
                             $iddm =$_SESSION['iddm'];
-                            $sql="select * from xe where iddm='$iddm'";
+                            $sql="select * from xe where iddm='$iddm' and idxe <> $arridxe ";
                             $xe = getAll($sql);
                             unset($_SESSION['iddm']);
                         }
                         else
                         {
-                            $sql="select * from xe";
+                            $sql="select * from xe where idxe <> $arridxe";
                             $xe = getAll($sql);
                         }                 
                     ?>
                         <?php foreach($xe as $key => $value):?>
                         <a href="./view/chitietsp.php?id= <?php echo $value['idxe']?>">
+                        
                             <div class="sp">
                                 <img src="./admin/uploat/<?php echo $value['img']?>" alt="">
                                 <p><?php echo $value['tenxe']?></p>
@@ -214,6 +221,7 @@ function dk() {
         </div>
     </div>
 </body>
+
 <!-- js -->
 
 <script>
