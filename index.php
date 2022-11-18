@@ -31,7 +31,11 @@ $idxe = getAll($sqlidxe);
 foreach ($idxe as $key => $value) {  
     $arr[$key] = $value['idxe'];
 }
-$arridxe = implode(' and idxe <> ', $arr);
+if($arr){
+    $arridxe = implode(' and idxe <> ', $arr);
+}
+else
+    $arridxe = 0;
 
 ?>
 <script>
