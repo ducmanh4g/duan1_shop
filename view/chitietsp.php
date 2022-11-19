@@ -321,9 +321,12 @@ function check() {
     } else if (input_date.getMonth()+1 < date.getMonth() + 1) {
         alert("tháng không hợp lệ")
         return false
-    } else if (input_date.getDate() < date.getDate()) {
-        alert("ngày không hợp lệ")
+    } else if (input_date.getMonth() + 1 === date.getMonth() + 1) {
+        if(input_date.getDate() < date.getDate()){
+             alert("ngày không hợp lệ")
         return false
+        }
+       
     }
 }
 
