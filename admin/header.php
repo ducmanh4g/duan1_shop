@@ -17,7 +17,7 @@
                 <h1>Xin chào Admin</h1>
             </div>
             <div class="dangxuat">
-                <a onclick="return(checkout())" href="../view/save/save_lgout.php"><button>Đăng xuất</button></a>
+                <a onclick="return(checkout())" href="./save/save_lgout.php"><button>Đăng xuất</button></a>
             </div>
         </div>
     </div>

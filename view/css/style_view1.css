@@ -1,12 +1,15 @@
 .container{
-   padding-top: 30px;
-    width: 1700px;
-    margin: auto;
+
   }
 *{box-sizing: border-box;}
 body {
-  width: 100%;
   background-color: #000000;
+}
+.banner{
+  background-image: url(../img/backgroud/banner-3-1920x800.jpg);
+  background-size: cover;
+  height: 800px;
+  padding: 0 30px;
 }
 .header {
     display: flex;
@@ -35,69 +38,45 @@ body {
   background: white;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
- #slideshow {
-  /* border-radius: 1rem; */
-    overflow: hidden;
-    height: 410px;
-    width: 100%;
-    margin: 0 auto;
-    box-shadow:10px 5px 5px rgb(230, 228, 228);
 
-  }
- .slide-wrapper {
-    width: 5912px;
-    animation: slide 11s ease infinite;
-  }
- .slide {
-    float: left;
-    height: 510px;
-    width: 1728px;
-  }
-  .slide img{
-    width: 100%;
-    height: 100%;
-  }
- @keyframes slide {
-    20% {margin-left: 0px;}
-    30% {margin-left: -1728px;}
-    50% {margin-left: -1728px;}
-    60% {margin-left: -3456px;}
-    80% {margin-left: -3550px;}
-  }
-  .menu{
-    height: 40px;
-  }
   .banner .menu ul{
     text-align: center;
+    color: white;
   }
   .banner .menu ul li{
     display: inline-block;
     margin-left: 20px;
+    padding-right: 5px;
   }
   .banner .menu ul li a{
     text-decoration: none;
     font-size: 20px;
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: bold;
   }
   .banner .menu ul li a:hover{
-    color: rgb(239, 49, 49);
-    font-size: 30px;
-    text-shadow: 2px 2px 5px rgb(255, 78, 78);
+    color: rgb(39, 21, 230);
+   
+    text-shadow: 2px 2px 5px rgb(132, 132, 132);
   }
   * {box-sizing:border-box}
 
   /* slide */
   .slider {
+    background-image: url(../img/backgroud/banner.jpg);
+    background-size: cover;
+
     width: 100%;
     text-align: center;
     overflow: hidden;
   }
-  
+  .slider h2{
+    color: white;
+  }
   .slides {
     display: flex;
     overflow-x: auto;
-    
+    width: 39%;
     border-radius: 5px;
     
     scroll-behavior: smooth;
@@ -111,7 +90,7 @@ body {
     height: 10px;
   }
   .slides::-webkit-scrollbar-thumb {
-    background: black;
+    background: rgb(22, 156, 246);
     border-radius: 10px;
   }
   .slides::-webkit-scrollbar-track {
@@ -176,61 +155,34 @@ body {
   } */
   
   .content{
-    display: flex;
-    justify-content: space-between;
+    padding:0 200px;
   }
-  
-  .content .col1{
-    width: 80%;
-  }
-
-  .taikhoan{
-    color: white;
-    border: solid 2px rgb(220, 220, 223);
-    padding: 5px;
-    border-radius: 3px;
-    box-shadow: 4px 0px 10px white;
-    font-size: 25px;
-  }
-  
-  .taikhoan .button{
-    margin-top: 5px;
-    background-color: rgb(250, 62, 62);
-    border-radius: 5px;
-    border: none;
-    color: white;
-    width: 100%;
-  }
-  .taikhoan .button:hover{
-    background-color:white;
-    border-radius: 5px;
-    color: rgb(255, 0, 0);
+  @media only screen and (max-width: 600px) {
     
   }
-  .taikhoan p{
-    color: white;
-    font-size: 20px;
-  }
-  .taikhoan input{
-    width: 100%;
-    height: 20px;
-  
-  }
- 
-  .taikhoan .checkbox{
-    width: 20px;
-  }
   .danhmuc{
+    padding-top: 7px;
+    height: 30px;
     margin-top: 10px;
-    border: solid 2px rgb(220, 220, 223);
-    padding: 5px;
-    box-shadow: 4px 0px 10px white;
     color: white;
-
+    background-color:  rgb(78, 118, 225);
+    
+  }
+  .danhmuc ul{
+    list-style: none;
+  }
+  
+  .danhmuc ul li{
+    text-align: center;
+    width: 150px;
+    background-color: rgb(37, 46, 149);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    display: inline-block;
   }
   .danhmuc a{
     color: white;
     font-size: 20px;
+    text-decoration: none;
   }
 .col1 .slider img{
   width: 100%;

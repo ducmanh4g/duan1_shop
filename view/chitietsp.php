@@ -58,6 +58,25 @@
             document.getElementById('close_tt').addEventListener('click', close_tt)
         }
     }
+
+    function dangnhap() {
+        var element = document.getElementById('dangnhap')
+        element.style.display = 'block'
+        document.getElementById('closee').addEventListener('click', close_dangnhap)
+
+    }
+
+    function close_dangnhap() {
+        var element = document.getElementById('dangnhap')
+        console.log(element)
+        element.style.display = 'none'
+
+        var cl = confirm("bạn có đóng hay không")
+        if (cl == true) {
+            element.style.display = 'none'
+        } else
+            element.style.display = 'block'
+    }
     </script>
 </head>
 <?php    
@@ -96,7 +115,12 @@
                 <div class="logo">
                     <img src="./img/xemxe-logowhite.png" alt="">
                 </div>
-                <a href="./save/save_lgout.php"><button>Đăng xuất</button></a>
+                <?php if(isset($_SESSION['username'])){?>
+                <a href="../view/save/save_lgout.php"><button>Đăng xuất</button></a>
+                <?php }
+                            else{?>
+                <a href="#"><button onclick="dangnhap()">Đăng nhập</button></a>
+                <?php }?>
             </div>
             <div id="slideshow">
                 <div class="slide-wrapper">
@@ -177,32 +201,6 @@
                 </div>
             </div>
             <div class="col2_ct">
-                <?php if(!isset($_SESSION['username'])){ ?>
-                <div class="taikhoan">
-                    <h3>Tài khoản</h3>
-                    <form action="./save/save_tk.php" method="GET" onsubmit="return(checklogin())">
-                        <p>Tên đăng nhập</p>
-                        <div>
-                            <input id="user" class="input" type="text" required="" name="taikhoan">
-                        </div>
-                        <p>Mật khẩu</p>
-                        <div>
-                            <input id="pass" class="input" type="password" required minlength="3" name="matkhau">
-                        </div>
-                        <p>Ghi nhớ mật khẩu</p>
-                        <div>
-                            <input class="checkbox" type="checkbox">
-                        </div>
-                        <div>
-                            <input class="button" type="submit" value="Đăng nhập">
-                        </div>
-                    </form>
-                    <div class="taikhoan_dk">
-                        <a href=""><button>quên mật khẩu</button></a>
-                        <button onclick="dk()">đăng ký thành viên</button>
-                    </div>
-                </div>
-                <?php } ?>
                 <div class="danhmuc">
                     <h3>Danh mục</h3>
                     <?php foreach($dm as $key => $value):?>
@@ -246,6 +244,28 @@
         </div>
     </div>
 
+    <!-- form đăng nhập -->
+    <div id="dangnhap"
+        style="position: fixed; width:100vw; height:100vh; background-color:rgba(48, 82, 212, 0.2);top:0;display: none;">
+        <div style="width:100%; height:100%;display: flex;justify-content: center;align-items: center">
+            <div style=" width:600px; height:auto; background-color:rgba(0,0,0,0.9);">
+                <div class="close"><button id="closee" style="cursor: pointer;">X</button></div>
+                <div class="form">
+                    <div class="brand-logo"></div>
+                    <div class="brand-title">Đăng nhập</div>
+                    <div class="inputs">
+                        <form action="./save/save_tk.php" id="form" onsubmit="return(checklogin())" method="GET">
+                            <label>Tài Khoản</label>
+                            <input type="text" id="user" name="taikhoan" placeholder="Nhập tài khoản" required />
+                            <label>Password</label>
+                            <input type="password" id="pass" name="matkhau" placeholder="Nhập password" required />
+                            <button type="submit">Đăng nhập</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- form thông tin khách hàng -->
     <div id="tt_khachhang"
         style="position: fixed; width:100vw; height:100vh; background-color:rgba(48, 82, 212, 0.2);top:0;display: none;">
@@ -311,22 +331,21 @@ function checktk() {
 //check year
 function check() {
     var a = document.getElementById("date").value
-     
+
     var date = new Date()
-    var  input_date = new Date(a)
+    var input_date = new Date(a)
     console.log()
     if (input_date.getFullYear() < date.getFullYear()) {
         alert("Năm không hợp lệ")
         return false
-    } else if (input_date.getMonth()+1 < date.getMonth() + 1) {
+    } else if (input_date.getMonth() + 1 < date.getMonth() + 1) {
         alert("tháng không hợp lệ")
         return false
     } else if (input_date.getMonth() + 1 === date.getMonth() + 1) {
-        if(input_date.getDate() < date.getDate()){
-             alert("ngày không hợp lệ")
-        return false
+        if (input_date.getDate() < date.getDate()) {
+            alert("ngày không hợp lệ")
+            return false
         }
-       
     }
 }
 
